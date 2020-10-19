@@ -1,0 +1,46 @@
+version: 2.1
+
+orbs:
+  codacy: codacy/base@5.0.4
+  codacy_plugins_test: codacy/plugins-test@0.14.5
+
+workflows:
+  version: 2
+  test_and_publish:
+    jobs:
+      - codacy/checkout_and_version
+      - codacy/sbt:
+          name: populate_cache_and_compile
+          cmd: |
+            sbt scalafmt::test test:scalafmt::test sbt:scalafmt::test test:compile
+          persist_to_workspace: true
+          requires:
+            - codacy/checkout_and_version
+      - codacy/sbt:
+          name: publish_docker_local
+          cmd: |
+            sbt universal:stage graalvm-native-image:packageBin
+            docker build -t $CIRCLE_PROJECT_REPONAME:latest .
+            docker save --output docker-image.tar $CIRCLE_PROJECT_REPONAME:latest
+          persist_to_workspace: true
+          requires:
+            - populate_cache_and_compile
+      - codacy_plugins_test/run:
+          name: plugins_test
+          run_json_tests: false
+          run_duplication_tests: true
+          requires:
+            - publish_docker_local
+      - codacy/publish_docker:
+          context: CodacyDocker
+          requires:
+            - plugins_test
+          filters:
+            branches:
+              only:
+                - master
+      - codacy/tag_version:
+          name: tag_version
+          context: CodacyAWS
+          requires:
+            - codacy/publish_docker
