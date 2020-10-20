@@ -11,7 +11,7 @@ COPY docs /docs
 RUN adduser --uid 2004 --disabled-password --gecos "" docker
 COPY target/universal/stage/ /workdir/
 RUN chmod +x /workdir/bin/codacy-duplication-jscpd
-# USER docker
+USER docker
 WORKDIR /src
 ENTRYPOINT ["/workdir/bin/codacy-duplication-jscpd"]
 
