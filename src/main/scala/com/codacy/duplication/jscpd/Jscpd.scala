@@ -1,14 +1,15 @@
 package com.codacy.duplication.jscpd
 
 import better.files.File._
-import com.codacy.plugins.api.duplication.{DuplicationClone, DuplicationCloneFile, DuplicationTool}
-import com.codacy.plugins.api.Source
-import com.codacy.plugins.api.languages.Language
-import com.codacy.plugins.api.Options.{Key, Value}
 import com.codacy.duplication.scala.seed.DockerDuplication
+import com.codacy.plugins.api.Options.{Key, Value}
+import com.codacy.plugins.api.Source
+import com.codacy.plugins.api.duplication.{DuplicationClone, DuplicationCloneFile, DuplicationTool}
+import com.codacy.plugins.api.languages.Language
+import play.api.libs.json._
+
 import scala.sys.process._
 import scala.util.Try
-import play.api.libs.json._
 
 object Jscpd extends DuplicationTool {
 
