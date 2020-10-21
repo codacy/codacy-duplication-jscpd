@@ -16,17 +16,21 @@ object Jscpd extends DuplicationTool {
   def apply(path: Source.Directory,
             language: Option[Language],
             options: Map[Key, Value]): Try[List[DuplicationClone]] = {
+    val minTokens = options.get(Key("minTokenMatch")).flatMap(_.asOpt[Int]).getOrElse(40).toString
     Try {
+      val pattern = language match {
+        case Some(l) => List("--pattern", s"**/*${l.extensions.mkString("|")}")
+        case None    => List.empty
+      }
       temporaryDirectory() { reportDir =>
-        Seq(
-          "/node_modules/jscpd/bin/jscpd",
-          "--min-tokens",
-          "40",
-          "--reporters",
-          "json",
-          "--output",
-          reportDir.pathAsString,
-          ".").!(ProcessLogger(fout = System.err.println, ferr = System.err.println))
+        val command = "/node_modules/jscpd/bin/jscpd" ::
+          "--min-tokens" ::
+          minTokens ::
+          "--reporters" ::
+          "json" ::
+          "--output" ::
+          reportDir.pathAsString :: "." :: pattern
+        command.!(ProcessLogger(fout = System.err.println, ferr = System.err.println))
         val reportFile = reportDir / "jscpd-report.json"
         if (reportFile.exists) {
           val json = Json.parse((reportDir / "jscpd-report.json").contentAsString)
