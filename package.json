@@ -1,0 +1,17 @@
+{
+  "name": "codacy-duplication-jscpd",
+  "description": "Duplication tool for jscpd",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codacy/codacy-duplication-jscpd.git"
+  },
+  "author": "Codacy",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/codacy/codacy-duplication-jscpd/issues"
+  },
+  "homepage": "https://github.com/codacy/codacy-duplication-jscpd#readme",
+  "dependencies": {
+    "jscpd": "^3.3.19"
+  }
+}
