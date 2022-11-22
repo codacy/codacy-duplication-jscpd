@@ -1,4 +1,4 @@
-ARG alpine_version=3.14.2
+ARG alpine_version=3.16.3
 
 FROM alpine:$alpine_version as builder
 
