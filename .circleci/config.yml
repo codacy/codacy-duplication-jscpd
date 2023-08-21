@@ -12,7 +12,7 @@ workflows:
       - codacy/sbt:
           name: populate_cache_and_compile
           cmd: |
-            sbt scalafmt::test test:scalafmt::test sbt:scalafmt::test test:compile
+            sbt scalafmtSbt scalafmtAll
           persist_to_workspace: true
           requires:
             - codacy/checkout_and_version
