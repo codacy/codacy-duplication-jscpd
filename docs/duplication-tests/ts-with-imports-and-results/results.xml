@@ -1,0 +1,13 @@
+<checkstyle version="4.3">
+    <property name="ignoreMessage" />
+    <duplication nrTokens="0" nrLines="24" message="">
+        <file name="file1.ts">
+            <property name="startLine" value="9" />
+            <property name="endLine" value="33" />
+        </file>
+        <file name="file2.ts">
+            <property name="startLine" value="9" />
+            <property name="endLine" value="32" />
+        </file>
+    </duplication>
+</checkstyle>
