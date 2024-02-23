@@ -8,36 +8,36 @@ import { map, filter, switchMap } from 'rxjs/operators';
 
 const b = {
   'a': [
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-    'h',
-    'i',
-    'l',
-    'm',
-    'n',
-    'o',
-    'p',
-    'q',
-    'r',
-    's',
-    't',
-    'v',
-    'z',
+    '123a',
+    '123b',
+    '123c',
+    '123d',
+    '123e',
+    '123f',
+    '123g',
+    '123h',
+    '123i',
+    '123l',
+    '123m',
+    '123n',
+    '123o',
+    '123p',
+    '123q',
+    '123r',
+    '123s',
+    '123t',
+    '123v',
+    '123z',
   ],
   'b': [
-    'a',
-    'b',
-    'c',
-    'd',
-    'e'
+    '123a',
+    '123b',
+    '123c',
+    '123d',
+    '123e'
   ]
 };
 
-function aFunction(n: number): number {
+function aPossibleFunction(n: number): number {
   return n + 1
 }
