@@ -1,4 +1,4 @@
-ARG alpine_version=3.20
+ARG alpine_version=3.19
 
 FROM alpine:$alpine_version as builder
 
