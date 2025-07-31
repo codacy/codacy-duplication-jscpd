@@ -3,3 +3,11 @@ node_modules
 .bsp
 .metals
 
+#Ignore vscode AI rules
+.github/copilot-instructions.md
+
+.bloop/
+.vscode/
+project/.bloop/
+project/metals.sbt
+project/project/

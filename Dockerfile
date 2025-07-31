@@ -1,4 +1,4 @@
-ARG alpine_version=3.20
+ARG alpine_version=3.22
 
 FROM alpine:$alpine_version as builder
 
@@ -13,7 +13,7 @@ COPY --from=builder /node_modules /node_modules
 
 FROM base as dev
 
-RUN apk add --no-cache openjdk11
+RUN apk add --no-cache openjdk17
 COPY docs /docs
 RUN adduser --uid 2004 --disabled-password --gecos "" docker
 COPY target/universal/stage/ /workdir/
