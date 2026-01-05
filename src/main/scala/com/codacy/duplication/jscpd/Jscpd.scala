@@ -38,7 +38,7 @@ object Jscpd extends DuplicationTool {
             "--min-tokens" ::
             minTokens ::
             "--ignore-pattern" ::
-            "import.*from*" ::
+            "import.*" ::
             "--reporters" ::
             "json" ::
             "--output" ::
