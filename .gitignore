@@ -11,3 +11,8 @@ node_modules
 project/.bloop/
 project/metals.sbt
 project/project/
+project/.DS_Store
+.DS_Store
+
+#Ignore vscode AI rules
+.github/instructions/codacy.instructions.md
