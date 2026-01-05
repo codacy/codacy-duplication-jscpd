@@ -1,17 +1,17 @@
 ARG alpine_version=3.22
 
-FROM alpine:$alpine_version as builder
+FROM alpine:$alpine_version AS builder
 
 RUN apk add --no-cache npm
 COPY package*.json ./
 RUN npm install --production
 
-FROM alpine:$alpine_version as base
+FROM alpine:$alpine_version AS base
 
 RUN apk add --no-cache nodejs bash
 COPY --from=builder /node_modules /node_modules
 
-FROM base as dev
+FROM base AS dev
 
 RUN apk add --no-cache openjdk17
 COPY docs /docs
