@@ -1,9 +1,9 @@
-scalaVersion := "2.13.11"
+scalaVersion := "2.13.16"
 
 name := "codacy-duplication-jscpd"
 
 libraryDependencies ++= Seq(
-  "com.codacy" %% "codacy-duplication-scala-seed" % "2.1.1",
+  "com.codacy" %% "codacy-duplication-scala-seed" % "2.1.4",
   "org.scalameta" %% "svm-subs" % "20.2.0"
 )
 enablePlugins(GraalVMNativeImagePlugin)
