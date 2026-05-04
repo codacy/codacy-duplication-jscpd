@@ -1,12 +1,14 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-    timezone: Europe/Lisbon
-  open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: jscpd
-    versions:
-    - 3.3.24
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: daily
+      timezone: Europe/Lisbon
+    open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: jscpd
+        versions:
+          - 3.3.24
+    cooldown:
+      default-days: 7
