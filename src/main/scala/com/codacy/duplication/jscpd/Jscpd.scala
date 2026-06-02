@@ -64,10 +64,14 @@ object Jscpd extends DuplicationTool {
                     val filePath = o("name").as[String]
                     val startLine = o("start").as[Int]
                     val endLine = o("end").as[Int]
+                    // We found a bug in jscpd where the startLine is, sometimes, bigger than the endLine
+                    // so we need to normalize that
+                    val normalizedStartLine = math.min(startLine, endLine)
+                    val normalizedEndLine = math.max(startLine, endLine)
                     DuplicationCloneFile(
                       filePath = filePath,
-                      startLine = startLine,
-                      endLine = endLine
+                      startLine = normalizedStartLine,
+                      endLine = normalizedEndLine
                     )
                   })
                 )
