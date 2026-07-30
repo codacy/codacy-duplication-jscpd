@@ -34,7 +34,7 @@ object Jscpd extends DuplicationTool {
             case Some(ext) => List("--pattern", s"**/*$ext")
             case None      => Nil
           }
-          val command = "/node_modules/jscpd/bin/jscpd" ::
+          val command = "/node_modules/.bin/jscpd" ::
             "--min-tokens" ::
             minTokens ::
             "--ignore-pattern" ::
