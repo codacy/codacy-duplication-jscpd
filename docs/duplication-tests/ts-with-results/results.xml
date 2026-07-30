@@ -1,9 +1,9 @@
 <checkstyle version="4.3">
     <property name="ignoreMessage" />
-    <duplication nrTokens="0" nrLines="24" message="">
+    <duplication nrTokens="46" nrLines="23" message="">
         <file name="file1.ts">
             <property name="startLine" value="1" />
-            <property name="endLine" value="24" />
+            <property name="endLine" value="23" />
         </file>
         <file name="file2.ts">
             <property name="startLine" value="1" />
