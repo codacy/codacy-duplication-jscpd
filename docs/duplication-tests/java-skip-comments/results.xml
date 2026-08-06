@@ -1,11 +1,11 @@
 <checkstyle version="4.3">
     <property name="ignoreMessage" />
     <duplication nrTokens="46" nrLines="23" message="">
-        <file name="file1.ts">
+        <file name="file1.java">
             <property name="startLine" value="1" />
             <property name="endLine" value="23" />
         </file>
-        <file name="file2.ts">
+        <file name="file2.java">
             <property name="startLine" value="1" />
             <property name="endLine" value="23" />
         </file>
