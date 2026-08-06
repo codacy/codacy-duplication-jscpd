@@ -37,6 +37,9 @@ object Jscpd extends DuplicationTool {
           val command = "/node_modules/.bin/jscpd" ::
             "--min-tokens" ::
             minTokens ::
+            "--max-size" ::
+            "150kb" ::
+            "--skip-comments" ::
             "--ignore-pattern" ::
             "import.*" ::
             "--reporters" ::

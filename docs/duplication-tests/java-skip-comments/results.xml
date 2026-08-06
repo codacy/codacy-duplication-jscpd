@@ -1,0 +1,13 @@
+<checkstyle version="4.3">
+    <property name="ignoreMessage" />
+    <duplication nrTokens="59" nrLines="16" message="">
+        <file name="file1.java">
+            <property name="startLine" value="5" />
+            <property name="endLine" value="20" />
+        </file>
+        <file name="file2.java">
+            <property name="startLine" value="5" />
+            <property name="endLine" value="20" />
+        </file>
+    </duplication>
+</checkstyle>
