@@ -12,6 +12,6 @@
   },
   "homepage": "https://github.com/codacy/codacy-duplication-jscpd#readme",
   "dependencies": {
-    "jscpd": "^5.0.14"
+    "jscpd": "^5.0.15"
   }
 }
